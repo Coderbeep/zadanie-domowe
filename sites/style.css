@@ -68,13 +68,12 @@ background-color: #b0dce4;
 }
 
 @media (max-width: 1450px){
-.pora_roku
-{
+.pora_roku{
 	float: none;
 	margin:0px 10px 10px 0px;
 }
 #strona{
-width:375px;
-height:1540px;
+	width:375px;
+	height:1540px;
 }
 }
