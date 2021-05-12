@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8"/>	
+	
+	<style>
+	#wynik{
+	position:absolute;
+	top:100px;
+	margin-left:10px;
+	}
+	body{
+	font-family: lato;
+	}
+	.wprowadz{
+	float: left;
+	padding-left: 10px;
+	margin-top: -10px;
+	}
+	.potwierdzajacy{
+	margin-left: 10px;
+	margin-top: 40px;
+	}
+	</style>
+	
+	<script>
+	var pierwszyElement;
+	var iloscWyrazow;
+	var roznica;
+	
+	function pobierz(){
+		pierwszyElement = Number(document.getElementById("firstElement").value);
+		iloscWyrazow = Number(document.getElementById("quantity").value);
+		roznica = Number(document.getElementById("difference").value);
+		
+		stworzCiag();
+	}
+	
+	function stworzCiag(){
+		var ciag = "";
+		var doWypisania = "";
+		for(i=1; i<=iloscWyrazow; i++){
+			ciag +=(pierwszyElement + ((i-1)*roznica) + ", ");
+			doWypisania += ciag + "<br \>";
+		}
+		doWypisania = ciag + "<br /> <br />" + doWypisania;
+		document.getElementById("wynik").innerHTML = doWypisania;
+		console.log(doWypisania);
+	}
+	</script>
+	
+</head>
+
+<body>
+	<div class="wprowadz">
+		<p>Pierwszy wyraz</p>
+		<input type="number" id="firstElement" />
+	</div>
+	<div class="wprowadz">
+		<p>Ilość wyrazów</p>
+		<input type="number" id="quantity" />
+	</div>
+	<div class="wprowadz">
+		<p>Różnica ciągu</p>
+		<input type="number" id="difference" />
+	</div>
+
+	
+	<input type="submit" value="Potwierdź" onclick="pobierz()"/>
+	
+	<div id="wynik"></div>
+</body>
+
+</html>
